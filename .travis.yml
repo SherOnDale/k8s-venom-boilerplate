@@ -7,16 +7,15 @@ env:
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_003b3e01c5f5_key -iv $encrypted_003b3e01c5f5_iv -in multi-docker.json.enc -out multi-docker.json -d
+  - openssl aes-256-cbc -K <KEY_NAME> -iv <IV_NAME> -in service-account.json.enc -out service-account.json -d
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
-  - gcloud auth activate-service-account --key-file multi-docker.json
-  - gcloud config set project multi-docker-234713
-  - gcloud config set compute/zone us-central1-a
-  - gcloud container clusters get-credentials multi-cluster
+  - gcloud auth activate-service-account --key-file service-account.json
+  - gcloud config set project <PROJECT_NAME>
+  - gcloud config set compute/zone <COMPUTE_ZONE>
+  - gcloud container clusters get-credentials <CLUSTER_NAME>
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker build -t sherondale/react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - ls
