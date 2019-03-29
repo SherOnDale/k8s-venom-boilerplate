@@ -1,17 +1,17 @@
-version: "3"
+version: '3'
 services:
   postgres:
-    image: "postgres:latest"
+    image: 'postgres:latest'
   nginx:
     restart: always
     build:
       context: ./nginx
     ports:
-      - "3050:80"
+      - '3050:80'
   api:
-    build:
-      dockerfile: Dockerfile.dev
-      context: ./server
+    image: node:alpine
+    working_dir: /app
+    command: npm run dev
     volumes:
       - ./server:/app
     environment:
@@ -21,8 +21,10 @@ services:
       - PG_PASSWORD=postgres_password
       - PG_PORT=5432
   client:
-    build:
-      dockerfile: Dockerfile.dev
-      context: ./client
+    image: node:alpine
+    working_dir: /app
+    command: npm rumn dev
+    ports:
+      - '3000:3000'
     volumes:
       - ./client:/app
