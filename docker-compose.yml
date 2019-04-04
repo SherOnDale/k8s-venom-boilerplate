@@ -23,7 +23,7 @@ services:
   client:
     image: node:alpine
     working_dir: /app
-    command: npm rumn dev
+    command: npm run dev
     ports:
       - '3000:3000'
     volumes:
