@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
+  "name": "venom",
   "version": "1.0.0",
-  "description": "My Portfolio",
+  "description": "venom boilerplate",
   "author": "Sherin Binu",
   "private": true,
   "scripts": {

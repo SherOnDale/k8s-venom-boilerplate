@@ -1,0 +1,24 @@
+{
+  "name": "k8s-venom-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for an Express-PostgreSQL-Nuxt application with K8S",
+  "scripts": {
+    "install": "npm install --prefix client && npm install --prefix server",
+    "start": "docker-compose up --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SherOnDale/k8s-venom-boilerplate.git"
+  },
+  "keywords": [
+    "k8s",
+    "nuxt",
+    "express"
+  ],
+  "author": "Sherin Binu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SherOnDale/k8s-venom-boilerplate/issues"
+  },
+  "homepage": "https://github.com/SherOnDale/k8s-venom-boilerplate#readme"
+}
