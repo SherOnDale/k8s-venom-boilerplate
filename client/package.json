@@ -8,15 +8,19 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "cross-env": "^5.2.0",
     "nuxt": "^2.4.0",
     "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/pwa": "^2.6.0"
+    "@nuxtjs/pwa": "^2.6.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
-  }
+  },
+  "snyk": true
 }
